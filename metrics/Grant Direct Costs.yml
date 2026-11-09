@@ -1,0 +1,9 @@
+unique_name: Grant Direct Costs
+object_type: metric
+label: Grant Direct Costs
+description: Direct costs charged to sponsored awards in the month.
+calculation_method: sum
+dataset: FACT_GRANT_ACTIVITY
+column: DIRECT_COST
+format: $#,##0
+unrelated_dimensions_handling: empty

@@ -1,0 +1,10 @@
+unique_name: Tuition Revenue
+object_type: metric
+label: Tuition Revenue
+description: 'Tuition charged for the census enrollment: credit hours x the residency rate. Additive across
+  terms.'
+calculation_method: sum
+dataset: FACT_ENROLLMENT_CENSUS
+column: TUITION_REVENUE
+format: $#,##0
+unrelated_dimensions_handling: empty

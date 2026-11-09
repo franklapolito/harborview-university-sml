@@ -1,0 +1,15 @@
+unique_name: DIM_CAMPUS
+object_type: dataset
+label: DIM_CAMPUS
+description: The three campuses.
+connection_id: Connection - Harborview University
+table: DIM_CAMPUS
+columns:
+- name: CAMPUS_KEY
+  data_type: long
+- name: CAMPUS_CODE
+  data_type: string
+- name: CAMPUS_NAME
+  data_type: string
+- name: CAMPUS_TYPE
+  data_type: string

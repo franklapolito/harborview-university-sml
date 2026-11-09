@@ -1,0 +1,10 @@
+unique_name: All New First-Year Students
+object_type: metric
+label: All New First-Year Students
+description: Every new first-year student, including part-time, non-degree and late admits. Reported for
+  context; NOT a retention denominator. Using it understates retention by about 15 points.
+calculation_method: sum
+dataset: FACT_RETENTION_COHORT
+column: ALL_NEW_FIRST_YEARS
+format: '#,##0'
+unrelated_dimensions_handling: empty

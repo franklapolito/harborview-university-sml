@@ -1,0 +1,30 @@
+unique_name: FACT_GRANT_ACTIVITY
+object_type: dataset
+label: FACT_GRANT_ACTIVITY
+description: Monthly sponsored-research spending by award period, July 2022 to October 2026, with the
+  period budget allotted evenly over the period's twelve months and the full period budget on its first
+  month.
+connection_id: Connection - Harborview University
+table: FACT_GRANT_ACTIVITY
+columns:
+- name: GRANT_ACTIVITY_KEY
+  data_type: long
+- name: DATE_KEY
+  data_type: long
+- name: AWARD_PERIOD_KEY
+  data_type: long
+- name: AWARD_KEY
+  data_type: long
+- name: COLLEGE_NAME
+  data_type: string
+- name: PERIOD_BUDGET_ALLOTMENT
+  data_type: decimal
+- name: AWARD_PERIOD_BUDGET
+  data_type: decimal
+- name: DIRECT_COST
+  data_type: decimal
+- name: INDIRECT_COST
+  data_type: decimal
+- name: TOTAL_COST
+  data_type: decimal
+  sql: DIRECT_COST + INDIRECT_COST

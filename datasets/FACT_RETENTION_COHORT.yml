@@ -1,0 +1,35 @@
+unique_name: FACT_RETENTION_COHORT
+object_type: dataset
+label: FACT_RETENTION_COHORT
+description: 'Entering fall cohorts Fall 2018 to Fall 2025 by campus x college x residency: the first-time
+  full-time cohort, all new first-years (the wrong denominator), retained to the second fall, graduated
+  in four and six years with the observable denominators.'
+connection_id: Connection - Harborview University
+table: FACT_RETENTION_COHORT
+columns:
+- name: COHORT_KEY
+  data_type: long
+- name: DATE_KEY
+  data_type: long
+- name: COHORT_TERM_KEY
+  data_type: long
+- name: CAMPUS_KEY
+  data_type: long
+- name: COLLEGE_NAME
+  data_type: string
+- name: RESIDENCY_KEY
+  data_type: long
+- name: FTFT_COHORT_SIZE
+  data_type: long
+- name: ALL_NEW_FIRST_YEARS
+  data_type: long
+- name: RETAINED_SECOND_FALL
+  data_type: long
+- name: GRADUATED_4YR
+  data_type: long
+- name: COHORT_4YR_OBSERVABLE
+  data_type: long
+- name: GRADUATED_6YR
+  data_type: long
+- name: COHORT_6YR_OBSERVABLE
+  data_type: long

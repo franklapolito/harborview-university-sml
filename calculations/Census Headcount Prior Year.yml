@@ -1,0 +1,9 @@
+unique_name: Census Headcount Prior Year
+object_type: metric_calc
+label: Census Headcount Prior Year
+description: Census headcount for the same term one academic year earlier (Fall 2026 shows Fall 2025).
+  Academic Calendar only.
+expression: CASE WHEN ISEMPTY([Measures].[Census Headcount]) THEN NULL ELSE (ParallelPeriod([Date Dimension].[Academic
+  Calendar].[Academic Year], 1, [Date Dimension].[Academic Calendar].CurrentMember), [Measures].[Census
+  Headcount]) END
+format: '#,##0'

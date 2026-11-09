@@ -1,0 +1,9 @@
+unique_name: Grant Burn Rate
+object_type: metric_calc
+label: Grant Burn Rate
+description: 'Grant Expenditures divided by the budget allotted so far: 100% means spending exactly on
+  the period''s pace. By award period it is the sponsor''s view; by fiscal year it mixes periods.'
+expression: CASE WHEN ISEMPTY([Measures].[Grant Expenditures]) OR ISEMPTY([Measures].[Award Budget Allotted])
+  OR [Measures].[Award Budget Allotted] = 0 THEN NULL ELSE [Measures].[Grant Expenditures] / [Measures].[Award
+  Budget Allotted] END
+format: percent

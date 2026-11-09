@@ -1,0 +1,10 @@
+unique_name: Four-Year Cohort Observable
+object_type: metric
+label: Four-Year Cohort Observable
+description: FTFT cohort size for cohorts old enough to observe a four-year graduation (Fall 2022 and
+  earlier); zero otherwise. The denominator of the four-year rate.
+calculation_method: sum
+dataset: FACT_RETENTION_COHORT
+column: COHORT_4YR_OBSERVABLE
+format: '#,##0'
+unrelated_dimensions_handling: empty

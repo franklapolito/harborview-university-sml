@@ -1,0 +1,8 @@
+unique_name: Grant Expenditures Prior Fiscal Year
+object_type: metric_calc
+label: Grant Expenditures Prior Fiscal Year
+description: Grant expenditures for the same fiscal period one year earlier.
+expression: CASE WHEN ISEMPTY([Measures].[Grant Expenditures]) THEN NULL ELSE (ParallelPeriod([Date Dimension].[Fiscal
+  Calendar].[Fiscal Year], 1, [Date Dimension].[Fiscal Calendar].CurrentMember), [Measures].[Grant Expenditures])
+  END
+format: $#,##0

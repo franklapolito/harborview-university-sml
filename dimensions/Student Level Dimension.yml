@@ -1,0 +1,32 @@
+unique_name: Student Level Dimension
+object_type: dimension
+label: Student Level Dimension
+description: Student Level (Undergraduate, Graduate) > Classification (Freshman, Sophomore, Junior, Senior,
+  Master's, Doctoral). Enrollment only.
+type: standard
+hierarchies:
+- unique_name: Student Level Hierarchy
+  label: Student Level Hierarchy
+  folder: Student Attributes
+  description: Student Level > Classification.
+  levels:
+  - unique_name: Student Level
+  - unique_name: Classification
+level_attributes:
+- unique_name: Student Level
+  label: Student Level
+  description: Undergraduate or Graduate.
+  dataset: DIM_CLASSIFICATION
+  key_columns:
+  - STUDENT_LEVEL
+  name_column: STUDENT_LEVEL
+  sort_column: STUDENT_LEVEL
+- unique_name: Classification
+  label: Classification
+  description: Class standing.
+  dataset: DIM_CLASSIFICATION
+  is_unique_key: true
+  key_columns:
+  - CLASSIFICATION_KEY
+  name_column: CLASSIFICATION
+  sort_column: CLASSIFICATION_KEY

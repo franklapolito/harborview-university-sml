@@ -1,0 +1,9 @@
+unique_name: Six-Year Graduation Rate
+object_type: metric_calc
+label: Six-Year Graduation Rate
+description: 'Graduated in six years over the cohorts old enough to observe it (Fall 2020 and earlier).
+  Fall 2020 cohort: 63.3%.'
+expression: CASE WHEN ISEMPTY([Measures].[Graduated in Six Years]) OR ISEMPTY([Measures].[Six-Year Cohort
+  Observable]) OR [Measures].[Six-Year Cohort Observable] = 0 THEN NULL ELSE [Measures].[Graduated in
+  Six Years] / [Measures].[Six-Year Cohort Observable] END
+format: percent

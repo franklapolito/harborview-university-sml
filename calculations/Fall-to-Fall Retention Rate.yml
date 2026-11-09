@@ -1,0 +1,9 @@
+unique_name: Fall-to-Fall Retention Rate
+object_type: metric_calc
+label: Fall-to-Fall Retention Rate
+description: 'Retained to Second Fall divided by the FTFT Cohort, the IPEDS definition. Fall 2025 cohort:
+  86.7%. Divided by All New First-Year Students instead it reads 71.2%, which is wrong.'
+expression: CASE WHEN ISEMPTY([Measures].[Retained to Second Fall]) OR ISEMPTY([Measures].[FTFT Cohort])
+  OR [Measures].[FTFT Cohort] = 0 THEN NULL ELSE [Measures].[Retained to Second Fall] / [Measures].[FTFT
+  Cohort] END
+format: percent

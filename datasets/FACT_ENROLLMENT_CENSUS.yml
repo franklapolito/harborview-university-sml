@@ -1,0 +1,30 @@
+unique_name: FACT_ENROLLMENT_CENSUS
+object_type: dataset
+label: FACT_ENROLLMENT_CENSUS
+description: Census-day enrollment by term x campus x program x classification x residency, Fall 2022
+  to Fall 2026. Headcount and FTE are snapshots per term; credit hours and tuition revenue are additive.
+connection_id: Connection - Harborview University
+table: FACT_ENROLLMENT_CENSUS
+columns:
+- name: ENROLLMENT_KEY
+  data_type: long
+- name: DATE_KEY
+  data_type: long
+- name: TERM_KEY
+  data_type: long
+- name: CAMPUS_KEY
+  data_type: long
+- name: PROGRAM_KEY
+  data_type: long
+- name: CLASSIFICATION_KEY
+  data_type: long
+- name: RESIDENCY_KEY
+  data_type: long
+- name: HEADCOUNT
+  data_type: long
+- name: CREDIT_HOURS
+  data_type: decimal
+- name: FTE
+  data_type: decimal
+- name: TUITION_REVENUE
+  data_type: decimal

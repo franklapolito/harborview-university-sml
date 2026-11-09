@@ -1,0 +1,8 @@
+unique_name: harborview_university_catalog
+object_type: catalog
+label: Harborview University
+description: 'Catalog for the Harborview University model: enrollment, retention and sponsored research
+  for a fictional university.'
+version: 1.9
+aggressive_agg_promotion: false
+build_speculative_aggs: false

@@ -1,0 +1,9 @@
+unique_name: Credit Hours per Student
+object_type: metric_calc
+label: Credit Hours per Student
+description: Average credit-hour load on the census day. Undergraduates about 14 in fall and spring, 6
+  in summer.
+expression: CASE WHEN ISEMPTY([Measures].[Credit Hours]) OR ISEMPTY([Measures].[Census Headcount]) OR
+  [Measures].[Census Headcount] = 0 THEN NULL ELSE [Measures].[Credit Hours] / [Measures].[Census Headcount]
+  END
+format: '#,##0.00'

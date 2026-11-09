@@ -1,0 +1,10 @@
+unique_name: Award Period Budget
+object_type: metric
+label: Award Period Budget
+description: 'The full budget of the award period (carried on the period''s first month, so a sum over
+  the period is the budget). HSU-1042 Year 2: $1,400,000.'
+calculation_method: sum
+dataset: FACT_GRANT_ACTIVITY
+column: AWARD_PERIOD_BUDGET
+format: $#,##0
+unrelated_dimensions_handling: empty

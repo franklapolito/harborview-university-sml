@@ -1,0 +1,10 @@
+unique_name: Graduated in Six Years
+object_type: metric
+label: Graduated in Six Years
+description: FTFT cohort members who graduated within six years. Populated only for cohorts Fall 2020
+  and earlier.
+calculation_method: sum
+dataset: FACT_RETENTION_COHORT
+column: GRADUATED_6YR
+format: '#,##0'
+unrelated_dimensions_handling: empty

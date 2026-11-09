@@ -1,0 +1,22 @@
+unique_name: Residency Dimension
+object_type: dimension
+label: Residency Dimension
+description: In-State, Out-of-State, International. Drives tuition rates. Enrollment and retention only.
+type: standard
+hierarchies:
+- unique_name: Residency Hierarchy
+  label: Residency Hierarchy
+  folder: Student Attributes
+  description: Residency.
+  levels:
+  - unique_name: Residency
+level_attributes:
+- unique_name: Residency
+  label: Residency
+  description: Tuition residency status.
+  dataset: DIM_RESIDENCY
+  is_unique_key: true
+  key_columns:
+  - RESIDENCY_KEY
+  name_column: RESIDENCY
+  sort_column: RESIDENCY_KEY

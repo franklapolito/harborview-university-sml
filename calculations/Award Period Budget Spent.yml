@@ -1,0 +1,9 @@
+unique_name: Award Period Budget Spent
+object_type: metric_calc
+label: Award Period Budget Spent
+description: 'Share of the award period''s full budget spent. Meaningful at the Award Period level (or
+  an award, summing its periods). HSU-1042 Year 2: 78.0%.'
+expression: CASE WHEN ISEMPTY([Measures].[Grant Expenditures]) OR ISEMPTY([Measures].[Award Period Budget])
+  OR [Measures].[Award Period Budget] = 0 THEN NULL ELSE [Measures].[Grant Expenditures] / [Measures].[Award
+  Period Budget] END
+format: percent

@@ -1,0 +1,7 @@
+unique_name: Tuition per Credit Hour
+object_type: metric_calc
+label: Tuition per Credit Hour
+description: Average tuition rate realised per credit hour.
+expression: CASE WHEN ISEMPTY([Measures].[Tuition Revenue]) OR ISEMPTY([Measures].[Credit Hours]) OR [Measures].[Credit
+  Hours] = 0 THEN NULL ELSE [Measures].[Tuition Revenue] / [Measures].[Credit Hours] END
+format: $#,##0.00

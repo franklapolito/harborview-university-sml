@@ -1,0 +1,8 @@
+unique_name: Tuition Revenue Prior Year
+object_type: metric_calc
+label: Tuition Revenue Prior Year
+description: Tuition revenue for the same term one academic year earlier.
+expression: CASE WHEN ISEMPTY([Measures].[Tuition Revenue]) THEN NULL ELSE (ParallelPeriod([Date Dimension].[Academic
+  Calendar].[Academic Year], 1, [Date Dimension].[Academic Calendar].CurrentMember), [Measures].[Tuition
+  Revenue]) END
+format: $#,##0

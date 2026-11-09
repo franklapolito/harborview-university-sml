@@ -1,0 +1,9 @@
+unique_name: Retained to Second Fall
+object_type: metric
+label: Retained to Second Fall
+description: FTFT cohort members enrolled on the census day of the following fall.
+calculation_method: sum
+dataset: FACT_RETENTION_COHORT
+column: RETAINED_SECOND_FALL
+format: '#,##0'
+unrelated_dimensions_handling: empty

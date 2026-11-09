@@ -1,0 +1,11 @@
+unique_name: DIM_RESIDENCY
+object_type: dataset
+label: DIM_RESIDENCY
+description: In-State, Out-of-State, International.
+connection_id: Connection - Harborview University
+table: DIM_RESIDENCY
+columns:
+- name: RESIDENCY_KEY
+  data_type: long
+- name: RESIDENCY
+  data_type: string

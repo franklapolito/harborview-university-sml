@@ -1,0 +1,58 @@
+unique_name: Program Dimension
+object_type: dimension
+label: Program Dimension
+description: 'Eight colleges and 57 degree programmes: College > Program. Enrollment joins at Program;
+  the retention cohort and sponsored-research facts join at College, so by Program they are empty.'
+type: standard
+hierarchies:
+- unique_name: Program Hierarchy
+  label: Program Hierarchy
+  folder: Program Attributes
+  description: College > Program.
+  levels:
+  - unique_name: College
+    secondary_attributes:
+    - unique_name: College Code
+      label: College Code
+      description: Two-letter college code.
+      folder: Program Attributes
+      dataset: DIM_PROGRAM
+      name_column: COLLEGE_CODE
+      key_columns:
+      - COLLEGE_CODE
+  - unique_name: Program
+    secondary_attributes:
+    - unique_name: Degree Level
+      label: Degree Level
+      description: Undergraduate or Graduate programme.
+      folder: Program Attributes
+      dataset: DIM_PROGRAM
+      name_column: DEGREE_LEVEL
+      key_columns:
+      - DEGREE_LEVEL
+    - unique_name: Program Code
+      label: Program Code
+      description: Programme code, e.g. CS101.
+      folder: Program Attributes
+      dataset: DIM_PROGRAM
+      name_column: PROGRAM_CODE
+      key_columns:
+      - PROGRAM_CODE
+level_attributes:
+- unique_name: College
+  label: College
+  description: The college or school.
+  dataset: DIM_PROGRAM
+  key_columns:
+  - COLLEGE_NAME
+  name_column: COLLEGE_NAME
+  sort_column: COLLEGE_NAME
+- unique_name: Program
+  label: Program
+  description: The degree programme.
+  dataset: DIM_PROGRAM
+  is_unique_key: true
+  key_columns:
+  - PROGRAM_KEY
+  name_column: PROGRAM_NAME
+  sort_column: PROGRAM_CODE

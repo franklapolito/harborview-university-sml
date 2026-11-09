@@ -1,0 +1,10 @@
+unique_name: Credit Hours
+object_type: metric
+label: Credit Hours
+description: 'Student credit hours enrolled on the census day. Additive across terms (an academic year''s
+  credit hours is the sum of Fall, Spring and Summer). Fall 2026: 516,929.5.'
+calculation_method: sum
+dataset: FACT_ENROLLMENT_CENSUS
+column: CREDIT_HOURS
+format: '#,##0.0'
+unrelated_dimensions_handling: empty

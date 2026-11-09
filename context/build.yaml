@@ -1,0 +1,11 @@
+unrelated_dimension_handling: empty
+warehouse: snowflake
+as_connection: SnowflakePartner
+database: HARBORVIEW_UNIVERSITY_DEMO
+schema: UNIVERSITY
+model_unique_name: harborview_university
+catalog_unique_name: harborview_university_catalog
+currency: USD
+time_window: academic + fiscal (Jul-Jun) + calendar
+semi_additive_default: first (census snapshot metrics)
+sml_version: '1.9'

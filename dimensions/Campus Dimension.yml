@@ -1,0 +1,40 @@
+unique_name: Campus Dimension
+object_type: dimension
+label: Campus Dimension
+description: Harborview Main Campus (residential flagship), Harbor Downtown Campus (urban commuter), Northshore
+  Campus (regional).
+type: standard
+hierarchies:
+- unique_name: Campus Hierarchy
+  label: Campus Hierarchy
+  folder: Campus Attributes
+  description: Campus.
+  levels:
+  - unique_name: Campus
+    secondary_attributes:
+    - unique_name: Campus Type
+      label: Campus Type
+      description: Residential flagship, urban commuter or regional.
+      folder: Campus Attributes
+      dataset: DIM_CAMPUS
+      name_column: CAMPUS_TYPE
+      key_columns:
+      - CAMPUS_TYPE
+    - unique_name: Campus Code
+      label: Campus Code
+      description: MAIN, DT, NS.
+      folder: Campus Attributes
+      dataset: DIM_CAMPUS
+      name_column: CAMPUS_CODE
+      key_columns:
+      - CAMPUS_CODE
+level_attributes:
+- unique_name: Campus
+  label: Campus
+  description: The campus.
+  dataset: DIM_CAMPUS
+  is_unique_key: true
+  key_columns:
+  - CAMPUS_KEY
+  name_column: CAMPUS_NAME
+  sort_column: CAMPUS_KEY

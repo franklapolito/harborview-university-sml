@@ -1,0 +1,13 @@
+unique_name: DIM_CLASSIFICATION
+object_type: dataset
+label: DIM_CLASSIFICATION
+description: Student level and classification.
+connection_id: Connection - Harborview University
+table: DIM_CLASSIFICATION
+columns:
+- name: CLASSIFICATION_KEY
+  data_type: long
+- name: STUDENT_LEVEL
+  data_type: string
+- name: CLASSIFICATION
+  data_type: string

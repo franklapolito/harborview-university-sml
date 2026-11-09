@@ -1,0 +1,8 @@
+unique_name: Four-Year Graduation Rate
+object_type: metric_calc
+label: Four-Year Graduation Rate
+description: Graduated in four years over the cohorts old enough to observe it (Fall 2022 and earlier).
+expression: CASE WHEN ISEMPTY([Measures].[Graduated in Four Years]) OR ISEMPTY([Measures].[Four-Year Cohort
+  Observable]) OR [Measures].[Four-Year Cohort Observable] = 0 THEN NULL ELSE [Measures].[Graduated in
+  Four Years] / [Measures].[Four-Year Cohort Observable] END
+format: percent

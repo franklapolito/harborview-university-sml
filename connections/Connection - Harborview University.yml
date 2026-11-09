@@ -1,0 +1,6 @@
+unique_name: Connection - Harborview University
+object_type: connection
+label: Connection - Harborview University
+as_connection: SnowflakePartner
+database: HARBORVIEW_UNIVERSITY_DEMO
+schema: UNIVERSITY

@@ -1,0 +1,10 @@
+unique_name: Award Budget Allotted
+object_type: metric
+label: Award Budget Allotted
+description: The award period budget spread evenly over its twelve months; summed through a month it is
+  the budget elapsed so far in the period. Compare Grant Expenditures to it for burn rate.
+calculation_method: sum
+dataset: FACT_GRANT_ACTIVITY
+column: PERIOD_BUDGET_ALLOTMENT
+format: $#,##0
+unrelated_dimensions_handling: empty

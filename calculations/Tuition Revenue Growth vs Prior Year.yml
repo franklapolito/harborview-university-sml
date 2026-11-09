@@ -1,0 +1,8 @@
+unique_name: Tuition Revenue Growth vs Prior Year
+object_type: metric_calc
+label: Tuition Revenue Growth vs Prior Year
+description: Term-over-term tuition revenue growth, same term prior academic year.
+expression: CASE WHEN ISEMPTY([Measures].[Tuition Revenue]) OR ISEMPTY([Measures].[Tuition Revenue Prior
+  Year]) OR [Measures].[Tuition Revenue Prior Year] = 0 THEN NULL ELSE ([Measures].[Tuition Revenue] -
+  [Measures].[Tuition Revenue Prior Year]) / [Measures].[Tuition Revenue Prior Year] END
+format: percent

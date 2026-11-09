@@ -1,0 +1,9 @@
+unique_name: Indirect Cost Rate Realised
+object_type: metric_calc
+label: Indirect Cost Rate Realised
+description: Indirect costs as a share of direct costs. Federal awards recover about 44% (55% on a modified
+  base).
+expression: CASE WHEN ISEMPTY([Measures].[Grant Indirect Costs]) OR ISEMPTY([Measures].[Grant Direct Costs])
+  OR [Measures].[Grant Direct Costs] = 0 THEN NULL ELSE [Measures].[Grant Indirect Costs] / [Measures].[Grant
+  Direct Costs] END
+format: percent

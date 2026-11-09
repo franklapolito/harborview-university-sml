@@ -1,0 +1,9 @@
+unique_name: Grant Indirect Costs
+object_type: metric
+label: Grant Indirect Costs
+description: Facilities and administrative (indirect) costs recovered in the month.
+calculation_method: sum
+dataset: FACT_GRANT_ACTIVITY
+column: INDIRECT_COST
+format: $#,##0
+unrelated_dimensions_handling: empty

@@ -1,0 +1,94 @@
+unique_name: Sponsored Award Dimension
+object_type: dimension
+label: Sponsored Award Dimension
+description: 'Sponsored research: Sponsor Type (Federal, State, Foundation, Industry) > Sponsor > Award
+  > Award Period. An award period is one twelve-month budget year of the award, running from the award''s
+  start date on the sponsor''s calendar, not the university''s fiscal year: HSU-1042 Year 2 runs 2025-09-01
+  to 2026-08-31. Grant activity only.'
+type: standard
+hierarchies:
+- unique_name: Award Hierarchy
+  label: Award Hierarchy
+  folder: Award Attributes
+  description: Sponsor Type > Sponsor > Award > Award Period.
+  levels:
+  - unique_name: Sponsor Type
+  - unique_name: Sponsor
+  - unique_name: Award
+    secondary_attributes:
+    - unique_name: Award Title
+      label: Award Title
+      description: The award's title.
+      folder: Award Attributes
+      dataset: DIM_AWARD_PERIOD
+      name_column: AWARD_TITLE
+      key_columns:
+      - AWARD_TITLE
+    - unique_name: Award College
+      label: Award College
+      description: The college holding the award (same as the Program Dimension's College).
+      folder: Award Attributes
+      dataset: DIM_AWARD_PERIOD
+      name_column: COLLEGE_NAME
+      key_columns:
+      - COLLEGE_NAME
+  - unique_name: Award Period
+    secondary_attributes:
+    - unique_name: Period Number
+      label: Period Number
+      description: Year 1, 2, 3 ... of the award.
+      folder: Award Attributes
+      dataset: DIM_AWARD_PERIOD
+      name_column: PERIOD_NUMBER
+      key_columns:
+      - PERIOD_NUMBER
+    - unique_name: Period Start Date
+      label: Period Start Date
+      description: First day of the award period.
+      folder: Award Attributes
+      dataset: DIM_AWARD_PERIOD
+      name_column: PERIOD_START_DATE
+      key_columns:
+      - PERIOD_START_DATE
+    - unique_name: Period End Date
+      label: Period End Date
+      description: Last day of the award period.
+      folder: Award Attributes
+      dataset: DIM_AWARD_PERIOD
+      name_column: PERIOD_END_DATE
+      key_columns:
+      - PERIOD_END_DATE
+level_attributes:
+- unique_name: Sponsor Type
+  label: Sponsor Type
+  description: Federal, State, Foundation or Industry.
+  dataset: DIM_AWARD_PERIOD
+  key_columns:
+  - SPONSOR_TYPE
+  name_column: SPONSOR_TYPE
+  sort_column: SPONSOR_TYPE
+- unique_name: Sponsor
+  label: Sponsor
+  description: The sponsoring agency, foundation or company (fictional).
+  dataset: DIM_AWARD_PERIOD
+  key_columns:
+  - SPONSOR_NAME
+  name_column: SPONSOR_NAME
+  sort_column: SPONSOR_NAME
+- unique_name: Award
+  label: Award
+  description: The award, as number and title, e.g. 'HSU-1042 Battery Materials Study'.
+  dataset: DIM_AWARD_PERIOD
+  key_columns:
+  - AWARD_KEY
+  name_column: AWARD_LABEL
+  sort_column: AWARD_NUMBER
+- unique_name: Award Period
+  label: Award Period
+  description: One budget year of the award with its dates.
+  dataset: DIM_AWARD_PERIOD
+  is_unique_key: true
+  key_columns:
+  - AWARD_PERIOD_KEY
+  name_column: AWARD_PERIOD_NAME
+  sort_column: AWARD_PERIOD_KEY

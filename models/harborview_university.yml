@@ -1,0 +1,171 @@
+unique_name: harborview_university
+object_type: model
+label: Harborview University
+description: 'Enrollment, retention and sponsored research for Harborview State University, a fictional
+  three-campus flagship, defined once and served to every BI tool and AI agent. Three calendars share
+  one Date Dimension: the Academic Calendar (Academic Year > Term) is the hierarchy for enrollment and
+  retention, and a year''s headcount is its fall census; the Fiscal Calendar (1 July to 30 June) is for
+  finance; sponsored awards run on their own award periods. Census Headcount and Census FTE are snapshots
+  per term that take the FIRST term in any period (the fall census) and are never summed across terms.
+  Retention and graduation rates divide by the first-time full-time cohort, never by all new first-years,
+  and graduation rates divide only by cohorts old enough to observe. Grant burn is spend against the award
+  period''s allotted budget. Data is as of 31 October 2026.'
+visible: true
+relationships:
+- unique_name: FACT_ENROLLMENT_CENSUS_Date_Dimension
+  from:
+    dataset: FACT_ENROLLMENT_CENSUS
+    join_columns:
+    - DATE_KEY
+  to:
+    dimension: Date Dimension
+    level: Day
+- unique_name: FACT_ENROLLMENT_CENSUS_Campus_Dimension
+  from:
+    dataset: FACT_ENROLLMENT_CENSUS
+    join_columns:
+    - CAMPUS_KEY
+  to:
+    dimension: Campus Dimension
+    level: Campus
+- unique_name: FACT_ENROLLMENT_CENSUS_Program_Dimension
+  from:
+    dataset: FACT_ENROLLMENT_CENSUS
+    join_columns:
+    - PROGRAM_KEY
+  to:
+    dimension: Program Dimension
+    level: Program
+- unique_name: FACT_ENROLLMENT_CENSUS_Student_Level_Dimension
+  from:
+    dataset: FACT_ENROLLMENT_CENSUS
+    join_columns:
+    - CLASSIFICATION_KEY
+  to:
+    dimension: Student Level Dimension
+    level: Classification
+- unique_name: FACT_ENROLLMENT_CENSUS_Residency_Dimension
+  from:
+    dataset: FACT_ENROLLMENT_CENSUS
+    join_columns:
+    - RESIDENCY_KEY
+  to:
+    dimension: Residency Dimension
+    level: Residency
+- unique_name: FACT_RETENTION_COHORT_Date_Dimension
+  from:
+    dataset: FACT_RETENTION_COHORT
+    join_columns:
+    - DATE_KEY
+  to:
+    dimension: Date Dimension
+    level: Day
+- unique_name: FACT_RETENTION_COHORT_Campus_Dimension
+  from:
+    dataset: FACT_RETENTION_COHORT
+    join_columns:
+    - CAMPUS_KEY
+  to:
+    dimension: Campus Dimension
+    level: Campus
+- unique_name: FACT_RETENTION_COHORT_Program_Dimension
+  from:
+    dataset: FACT_RETENTION_COHORT
+    join_columns:
+    - COLLEGE_NAME
+  to:
+    dimension: Program Dimension
+    level: College
+- unique_name: FACT_RETENTION_COHORT_Residency_Dimension
+  from:
+    dataset: FACT_RETENTION_COHORT
+    join_columns:
+    - RESIDENCY_KEY
+  to:
+    dimension: Residency Dimension
+    level: Residency
+- unique_name: FACT_GRANT_ACTIVITY_Date_Dimension
+  from:
+    dataset: FACT_GRANT_ACTIVITY
+    join_columns:
+    - DATE_KEY
+  to:
+    dimension: Date Dimension
+    level: Day
+- unique_name: FACT_GRANT_ACTIVITY_Program_Dimension
+  from:
+    dataset: FACT_GRANT_ACTIVITY
+    join_columns:
+    - COLLEGE_NAME
+  to:
+    dimension: Program Dimension
+    level: College
+- unique_name: FACT_GRANT_ACTIVITY_Sponsored_Award_Dimension
+  from:
+    dataset: FACT_GRANT_ACTIVITY
+    join_columns:
+    - AWARD_PERIOD_KEY
+  to:
+    dimension: Sponsored Award Dimension
+    level: Award Period
+metrics:
+- unique_name: Census Headcount
+  folder: Enrollment
+- unique_name: Census FTE
+  folder: Enrollment
+- unique_name: Credit Hours
+  folder: Enrollment
+- unique_name: Tuition Revenue
+  folder: Enrollment
+- unique_name: FTFT Cohort
+  folder: Retention
+- unique_name: All New First-Year Students
+  folder: Retention
+- unique_name: Retained to Second Fall
+  folder: Retention
+- unique_name: Graduated in Four Years
+  folder: Retention
+- unique_name: Four-Year Cohort Observable
+  folder: Retention
+- unique_name: Graduated in Six Years
+  folder: Retention
+- unique_name: Six-Year Cohort Observable
+  folder: Retention
+- unique_name: Grant Direct Costs
+  folder: Sponsored Research
+- unique_name: Grant Indirect Costs
+  folder: Sponsored Research
+- unique_name: Grant Expenditures
+  folder: Sponsored Research
+- unique_name: Award Budget Allotted
+  folder: Sponsored Research
+- unique_name: Award Period Budget
+  folder: Sponsored Research
+- unique_name: Credit Hours per Student
+  folder: Enrollment
+- unique_name: Tuition per Credit Hour
+  folder: Enrollment
+- unique_name: Census Headcount Prior Year
+  folder: Time Relative
+- unique_name: Headcount Growth vs Prior Year
+  folder: Time Relative
+- unique_name: Tuition Revenue Prior Year
+  folder: Time Relative
+- unique_name: Tuition Revenue Growth vs Prior Year
+  folder: Time Relative
+- unique_name: Fall-to-Fall Retention Rate
+  folder: Retention
+- unique_name: Four-Year Graduation Rate
+  folder: Retention
+- unique_name: Six-Year Graduation Rate
+  folder: Retention
+- unique_name: Grant Burn Rate
+  folder: Sponsored Research
+- unique_name: Award Period Budget Spent
+  folder: Sponsored Research
+- unique_name: Indirect Cost Rate Realised
+  folder: Sponsored Research
+- unique_name: Grant Expenditures Fiscal YTD
+  folder: Time Relative
+- unique_name: Grant Expenditures Prior Fiscal Year
+  folder: Time Relative

@@ -1,0 +1,10 @@
+unique_name: Six-Year Cohort Observable
+object_type: metric
+label: Six-Year Cohort Observable
+description: FTFT cohort size for cohorts old enough to observe a six-year graduation (Fall 2020 and earlier);
+  zero otherwise. The denominator of the six-year rate.
+calculation_method: sum
+dataset: FACT_RETENTION_COHORT
+column: COHORT_6YR_OBSERVABLE
+format: '#,##0'
+unrelated_dimensions_handling: empty

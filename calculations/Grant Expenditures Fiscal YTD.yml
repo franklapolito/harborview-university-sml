@@ -1,0 +1,8 @@
+unique_name: Grant Expenditures Fiscal YTD
+object_type: metric_calc
+label: Grant Expenditures Fiscal YTD
+description: Grant expenditures from 1 July through the selected fiscal month.
+expression: CASE WHEN ISEMPTY([Measures].[Grant Expenditures]) THEN NULL ELSE Aggregate(PeriodsToDate([Date
+  Dimension].[Fiscal Calendar].[Fiscal Year], [Date Dimension].[Fiscal Calendar].CurrentMember), [Measures].[Grant
+  Expenditures]) END
+format: $#,##0

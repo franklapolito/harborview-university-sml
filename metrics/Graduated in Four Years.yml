@@ -1,0 +1,10 @@
+unique_name: Graduated in Four Years
+object_type: metric
+label: Graduated in Four Years
+description: FTFT cohort members who graduated within four years. Populated only for cohorts Fall 2022
+  and earlier.
+calculation_method: sum
+dataset: FACT_RETENTION_COHORT
+column: GRADUATED_4YR
+format: '#,##0'
+unrelated_dimensions_handling: empty

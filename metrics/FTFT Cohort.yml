@@ -1,0 +1,10 @@
+unique_name: FTFT Cohort
+object_type: metric
+label: FTFT Cohort
+description: 'First-time, full-time, degree-seeking students entering in the fall: the IPEDS cohort and
+  the ONLY valid denominator for retention and graduation rates. Fall 2025 cohort: 7,960.'
+calculation_method: sum
+dataset: FACT_RETENTION_COHORT
+column: FTFT_COHORT_SIZE
+format: '#,##0'
+unrelated_dimensions_handling: empty

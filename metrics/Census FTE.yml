@@ -1,0 +1,15 @@
+unique_name: Census FTE
+object_type: metric
+label: Census FTE
+description: 'Full-time-equivalent students on the census day: credit hours / 15 (undergraduate) or /
+  12 (graduate). A snapshot per term like Census Headcount; the year''s value is the fall census. Fall
+  2026: 35,379.8.'
+calculation_method: sum
+dataset: FACT_ENROLLMENT_CENSUS
+column: FTE
+format: '#,##0.0'
+unrelated_dimensions_handling: empty
+semi_additive:
+  position: first
+  relationships:
+  - FACT_ENROLLMENT_CENSUS_Date_Dimension

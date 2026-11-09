@@ -1,0 +1,9 @@
+unique_name: Headcount Growth vs Prior Year
+object_type: metric_calc
+label: Headcount Growth vs Prior Year
+description: 'Fall-over-fall (or term-over-term) headcount growth. Fall 2026: Computing +8.7%, Engineering
+  +4.3%, Education -4.5%, Fine Arts -3.0%.'
+expression: CASE WHEN ISEMPTY([Measures].[Census Headcount]) OR ISEMPTY([Measures].[Census Headcount Prior
+  Year]) OR [Measures].[Census Headcount Prior Year] = 0 THEN NULL ELSE ([Measures].[Census Headcount]
+  - [Measures].[Census Headcount Prior Year]) / [Measures].[Census Headcount Prior Year] END
+format: percent

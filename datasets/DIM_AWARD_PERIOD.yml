@@ -1,0 +1,35 @@
+unique_name: DIM_AWARD_PERIOD
+object_type: dataset
+label: DIM_AWARD_PERIOD
+description: 'One row per award budget period, flattened with its award and sponsor: Sponsor Type > Sponsor
+  > Award > Award Period.'
+connection_id: Connection - Harborview University
+table: DIM_AWARD_PERIOD
+columns:
+- name: AWARD_PERIOD_KEY
+  data_type: long
+- name: AWARD_PERIOD_NAME
+  data_type: string
+- name: AWARD_KEY
+  data_type: long
+- name: AWARD_NUMBER
+  data_type: string
+- name: AWARD_TITLE
+  data_type: string
+- name: SPONSOR_TYPE
+  data_type: string
+- name: SPONSOR_NAME
+  data_type: string
+- name: COLLEGE_NAME
+  data_type: string
+- name: PERIOD_NUMBER
+  data_type: int
+- name: PERIOD_START_DATE
+  data_type: date
+- name: PERIOD_END_DATE
+  data_type: date
+- name: PERIOD_BUDGET
+  data_type: decimal
+- name: AWARD_LABEL
+  data_type: string
+  sql: AWARD_NUMBER || ' ' || AWARD_TITLE

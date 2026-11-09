@@ -1,0 +1,17 @@
+unique_name: Census Headcount
+object_type: metric
+label: Census Headcount
+description: 'Students enrolled on the term''s census day. A SNAPSHOT per term, never summed across terms:
+  for an academic year or fiscal year it is the FALL census (first term), the census of record. Fall 2026:
+  38,776. ALWAYS put a Term, Academic Year or Fiscal Year in the query; with no time level the engine
+  sums every census since 2022 (the dimension reaches back to 2018 for the retention cohorts). By calendar
+  Year the first census is Spring, which is not the census of record: use the Academic Calendar.'
+calculation_method: sum
+dataset: FACT_ENROLLMENT_CENSUS
+column: HEADCOUNT
+format: '#,##0'
+unrelated_dimensions_handling: empty
+semi_additive:
+  position: first
+  relationships:
+  - FACT_ENROLLMENT_CENSUS_Date_Dimension

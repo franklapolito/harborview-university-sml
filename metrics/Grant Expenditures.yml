@@ -1,0 +1,11 @@
+unique_name: Grant Expenditures
+object_type: metric
+label: Grant Expenditures
+description: 'Direct plus indirect costs charged to sponsored awards in the month. By award period it
+  is spend against that budget year; by fiscal year it is a different window and NOT the sponsor''s figure.
+  FY2026 all sponsors: $48.7M.'
+calculation_method: sum
+dataset: FACT_GRANT_ACTIVITY
+column: TOTAL_COST
+format: $#,##0
+unrelated_dimensions_handling: empty

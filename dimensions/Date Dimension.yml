@@ -1,0 +1,201 @@
+unique_name: Date Dimension
+object_type: dimension
+label: Date Dimension
+description: 'Three calendars over one set of days, which is why ''this year'' needs a hierarchy. Academic
+  Calendar (Academic Year > Term > Day) is the hierarchy for enrollment and retention: AY2026-27 is Fall
+  2026, Spring 2027, Summer 2027, and a year''s headcount is its FALL census. Fiscal Calendar (Fiscal
+  Year > Fiscal Quarter > Fiscal Month > Day, 1 July to 30 June, FY2027 = 2026-07-01 to 2027-06-30) is
+  the hierarchy for university finance; sponsored awards run on their own award periods, not on it. Calendar
+  (Year > Quarter > Month > Day) is kept for contrast: by calendar year the ''first'' term is Spring,
+  not Fall. Data is as of 31 October 2026: the Fall 2026 census is in, FY2027 is four months old.'
+type: time
+hierarchies:
+- unique_name: Academic Calendar
+  label: Academic Calendar
+  folder: Academic Calendar
+  filter_empty: 'yes'
+  description: Academic Year > Term > Day. The default for enrollment and retention questions.
+  levels:
+  - unique_name: Academic Year
+  - unique_name: Term
+    parallel_periods:
+    - key_columns:
+      - PRIOR_YEAR_TERM_KEY
+      level: Academic Year
+    secondary_attributes:
+    - unique_name: Term Type
+      label: Term Type
+      description: Fall, Spring or Summer. Fall is the census of record.
+      folder: Academic Calendar
+      dataset: DIM_DATE
+      name_column: TERM_TYPE
+      key_columns:
+      - TERM_TYPE
+    - unique_name: Term Of Year
+      label: Term Of Year
+      description: 1 = Spring, 2 = Summer, 3 = Fall (the order within a calendar year).
+      folder: Academic Calendar
+      dataset: DIM_DATE
+      name_column: TERM_OF_YEAR
+      key_columns:
+      - TERM_OF_YEAR
+  - unique_name: Day
+- unique_name: Fiscal Calendar
+  label: Fiscal Calendar
+  folder: Fiscal Calendar
+  filter_empty: 'yes'
+  description: Fiscal Year > Fiscal Quarter > Fiscal Month > Day, 1 July to 30 June.
+  levels:
+  - unique_name: Fiscal Year
+  - unique_name: Fiscal Quarter
+    parallel_periods:
+    - key_columns:
+      - PRIOR_FISCAL_YEAR_QUARTER_KEY
+      level: Fiscal Year
+    secondary_attributes:
+    - unique_name: Fiscal Quarter Of Year
+      label: Fiscal Quarter Of Year
+      description: Quarter within the fiscal year (1 = Jul-Sep).
+      folder: Fiscal Calendar
+      dataset: DIM_DATE
+      name_column: FISCAL_QUARTER_OF_YEAR
+      key_columns:
+      - FISCAL_QUARTER_OF_YEAR
+  - unique_name: Fiscal Month
+    parallel_periods:
+    - key_columns:
+      - PRIOR_FISCAL_YEAR_MONTH_KEY
+      level: Fiscal Year
+    secondary_attributes:
+    - unique_name: Fiscal Month Of Year
+      label: Fiscal Month Of Year
+      description: Month within the fiscal year (1 = July).
+      folder: Fiscal Calendar
+      dataset: DIM_DATE
+      name_column: FISCAL_MONTH_OF_YEAR
+      key_columns:
+      - FISCAL_MONTH_OF_YEAR
+  - unique_name: Day
+- unique_name: Calendar
+  label: Calendar
+  folder: Calendar
+  filter_empty: 'yes'
+  description: Year > Quarter > Month > Day. For contrast; not the reporting calendar for enrollment or
+    awards.
+  levels:
+  - unique_name: Year
+  - unique_name: Quarter
+    parallel_periods:
+    - key_columns:
+      - PRIOR_YEAR_QUARTER_KEY
+      level: Year
+  - unique_name: Month
+    parallel_periods:
+    - key_columns:
+      - PRIOR_YEAR_MONTH_KEY
+      level: Year
+    secondary_attributes:
+    - unique_name: Month Of Year
+      label: Month Of Year
+      description: Calendar month number.
+      folder: Calendar
+      dataset: DIM_DATE
+      name_column: MONTH_OF_YEAR
+      key_columns:
+      - MONTH_OF_YEAR
+  - unique_name: Day
+    secondary_attributes:
+    - unique_name: Month End Flag
+      label: Month End Flag
+      description: 1 on the last day of a month.
+      folder: Calendar
+      dataset: DIM_DATE
+      name_column: IS_MONTH_END
+      key_columns:
+      - IS_MONTH_END
+level_attributes:
+- unique_name: Academic Year
+  label: Academic Year
+  description: Academic year, Fall through Summer, e.g. AY2026-27 = Fall 2026 to Summer 2027. Its headcount
+    is the fall census.
+  dataset: DIM_DATE
+  key_columns:
+  - ACADEMIC_YEAR_KEY
+  name_column: ACADEMIC_YEAR_NAME
+  sort_column: ACADEMIC_YEAR_KEY
+  time_unit: year
+- unique_name: Term
+  label: Term
+  description: Academic term, e.g. 'Fall 2026'. Enrollment is a census per term; the fall term is the
+    census of record.
+  dataset: DIM_DATE
+  key_columns:
+  - TERM_KEY
+  name_column: TERM_NAME
+  sort_column: TERM_KEY
+  time_unit: quarter
+- unique_name: Fiscal Year
+  label: Fiscal Year
+  description: Fiscal year, 1 July to 30 June, named for the year it ends in.
+  dataset: DIM_DATE
+  key_columns:
+  - FISCAL_YEAR_KEY
+  name_column: FISCAL_YEAR_NAME
+  sort_column: FISCAL_YEAR_KEY
+  time_unit: year
+- unique_name: Fiscal Quarter
+  label: Fiscal Quarter
+  description: Fiscal quarter, e.g. FY2027 Q2 = October to December 2026.
+  dataset: DIM_DATE
+  key_columns:
+  - FISCAL_QUARTER_KEY
+  name_column: FISCAL_QUARTER_NAME
+  sort_column: FISCAL_QUARTER_KEY
+  time_unit: quarter
+- unique_name: Fiscal Month
+  label: Fiscal Month
+  description: Fiscal month, e.g. 'FY2027 M04 (Oct 2026)'.
+  dataset: DIM_DATE
+  key_columns:
+  - FISCAL_MONTH_KEY
+  name_column: FISCAL_MONTH_NAME
+  sort_column: FISCAL_MONTH_KEY
+  time_unit: month
+- unique_name: Year
+  label: Year
+  description: 'Calendar year. Not the reporting year for enrollment: by calendar year the first census
+    is Spring.'
+  dataset: DIM_DATE
+  key_columns:
+  - YEAR_KEY
+  name_column: YEAR_NAME
+  sort_column: YEAR_KEY
+  time_unit: year
+- unique_name: Quarter
+  label: Quarter
+  description: Calendar quarter.
+  dataset: DIM_DATE
+  key_columns:
+  - QUARTER_KEY
+  name_column: QUARTER_NAME
+  sort_column: QUARTER_KEY
+  time_unit: quarter
+- unique_name: Month
+  label: Month
+  description: Calendar month.
+  dataset: DIM_DATE
+  key_columns:
+  - MONTH_KEY
+  name_column: MONTH_NAME
+  sort_column: MONTH_KEY
+  time_unit: month
+- unique_name: Day
+  label: Day
+  description: Calendar day; the join target for every date key.
+  dataset: DIM_DATE
+  is_unique_key: true
+  key_columns:
+  - DATE_KEY
+  name_column: DATE_NAME
+  sort_column: DATE_KEY
+  time_unit: day
