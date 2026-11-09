@@ -77,7 +77,7 @@ level_attributes:
   sort_column: SPONSOR_NAME
 - unique_name: Award
   label: Award
-  description: The award, as number and title, e.g. 'HSU-1042 Battery Materials Study'.
+  description: The award, as number and title, e.g. 'HSU-1042 Autonomous Systems Study'.
   dataset: DIM_AWARD_PERIOD
   key_columns:
   - AWARD_KEY

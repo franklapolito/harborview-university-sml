@@ -30,3 +30,16 @@ Census Headcount and Census FTE are snapshots. A question about them must
 carry a Term, Academic Year or Fiscal Year; with no time level the engine
 sums every census since 2022. The metric descriptions say so and the MCP
 server warns when it is about to happen.
+
+## Certified over the demo2 MCP server, 2026-11-09
+
+All ten answers were returned by `run_query` against
+`atscale_catalogs.harborview_university_catalog.harborview_university` on demo2
+and matched the SQL: Fall 2026 38,776 (32,602 / 6,174), FTE 35,379.8, tuition
+$392,884,569.15; AY2026-27 returns the fall census; calendar year 2026 returns
+the Spring census (35,532), as documented; Fall 2025 retention 86.7085% on
+7,960; HSU-1042 Year 2 $1,091,999.98 of $1,400,000.00 (78.0%); FY2026 grants
+$48,723,683.09 with Federal $43,666,034.02; international 4,490 vs 4,727,
+$1,464.96 per credit hour; campus 26,318 / 8,982 / 3,476. A headcount query
+with no time level sums every census (Main Campus reads 250,132), which the
+metric description and the MCP server's warning both flag.
