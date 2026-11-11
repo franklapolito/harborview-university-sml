@@ -4,8 +4,8 @@ Enrollment, retention and sponsored research for a fictional three-campus
 flagship university: one governed definition of census headcount, FTE, credit
 hours, tuition, the first-time full-time cohort, retention and graduation
 rates, and grant burn by award period, served to Power BI, Excel and every MCP
-client. Built for the FRC SLED seller enablement (use case 3 of the SLED
-briefing: higher-education enrollment, retention and research-grant analytics).
+client. Built as a higher-education demo (enrollment, retention and
+research-grant analytics).
 
 Emitted by `harborview-university/sml/emit_sml.py`; data by
 `harborview-university/data/generate.py` (seed 42); loaded by `snowflake/load.sh`.
